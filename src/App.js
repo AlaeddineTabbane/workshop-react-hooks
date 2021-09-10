@@ -1,24 +1,63 @@
 import logo from './logo.svg';
 import './App.css';
-
+import { Col, Container, Row } from 'react-bootstrap';
+import Filter from './components/Filter';
+import List from './components/List';
+import { useEffect, useState } from 'react';
 function App() {
+
+  const [list, setList] = useState([])
+  console.log('function');
+  useEffect(() => {
+    
+    setList([
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+      {
+        img:'https://tn.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/1393/1.jpg?5666',
+        title:'ASUS',
+        description:'Description asus'
+      },
+    ]) 
+    return () => {
+      console.log('return')
+    }
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      <Row>
+        <Col xs='auto'>
+          <Filter />
+        </Col>
+        <Col>
+          <List list={list} />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
